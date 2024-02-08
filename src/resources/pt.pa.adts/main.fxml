@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pt.pa.adts.Controller">
+	<top>
+		<MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Open"/>
+						<MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit"/>
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Metrics">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#handleShowCreationChart" text="Chart 1 - Number of Files/Folders Created"/>
+						<MenuItem mnemonicParsing="false" onAction="#handleShowModificationChart" text="Chart 2 - Number of Files/Directories Changed"/>
+						<MenuItem mnemonicParsing="false" onAction="#handleLists" text="Lists"/>
+						<MenuItem mnemonicParsing="false" onAction="#handleStatistics" text="Statistics"/>
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About"/>
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<center>
+		<SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+			<items>
+				<TreeView fx:id="treeView" prefHeight="200.0" prefWidth="200.0"/>
+				<TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
+					<columnResizePolicy>
+						<TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+					</columnResizePolicy>
+				</TableView>
+			</items>
+		</SplitPane>
+	</center>
+	<bottom>
+		<Button fx:id="undoButton" text="Undo" onAction="#handleUndo"/>
+	</bottom>
+</BorderPane>
